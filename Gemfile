@@ -6,6 +6,10 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'haml'
+gem 'haml-rails', '>= 0.3.4', :group => :development
 
 
 # Gems used only for assets and not required

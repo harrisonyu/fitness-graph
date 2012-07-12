@@ -1,0 +1,12 @@
+=flash[:notice]
+=flash[:warning]
+%h1 Fitness Graphs
+
+
+-if current_user
+    ="Hello #{current_user.name}"
+    %br
+    %br
+    =link_to "Sign Out", signout_path
+-else
+    =link_to "Facebook Login", signin_path
