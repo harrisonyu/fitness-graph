@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_protected :name, :email
+  has_many :exercises
   
   def self.create_with_omniauth(auth)
     create! do |user|
