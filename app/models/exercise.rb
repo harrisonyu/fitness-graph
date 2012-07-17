@@ -1,5 +1,5 @@
 class Exercise < ActiveRecord::Base
-  attr_protected :name, :type, :date
+  attr_accessible :name, :type, :date, :user_id
   
   has_many :weightsets
   belongs_to :user
