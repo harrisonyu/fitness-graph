@@ -4,8 +4,8 @@ FitnessGraph::Application.routes.draw do
   
   match '/auth/:provider/callback'  => 'sessions#create'
   match '/auth/failure'             => 'sessions#failure'
-  match '/signout'                  => 'sessions#destroy', :as => :signout
-  match '/signin'                   => 'sessions#new', :as => :signin
+  match '/signout'                  => 'sessions#destroy',  :as => :signout
+  match '/signin'                   => 'sessions#new',      :as => :signin
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

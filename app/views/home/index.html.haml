@@ -1,7 +1,18 @@
 -if current_user
   ="Hello #{current_user.name}"
   %br
+  ="#{current_user.email}"
+  %br
   %br
   =link_to "Sign Out", signout_path
 -else
   =link_to "Facebook Login", signin_path
+  
+  
+%br
+%br
+%p.text#first-p.text
+  First
+
+%p#second-p
+  Second
