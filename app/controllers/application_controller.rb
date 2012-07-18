@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
   
   def authenticate_user!
     if !current_user
+      flash[:warning] = 'You need to sign in for access to this page.'
       redirect_to root_url, :warning => 'You need to sign in for access to this page.'
     end
   end

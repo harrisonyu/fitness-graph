@@ -1,6 +1,11 @@
 FitnessGraph::Application.routes.draw do
 
-  root :to => 'home#index'
+  root :to => 'home#public'
+  
+  match '/home'   => 'home#index', :as => :home
+  
+  get   '/home/exercise/new'    =>  'exercise#new',     :as => :new_exercise
+  post  '/home/exercise/create' =>  'exercise#create',  :as => :create_exercise
   
   match '/auth/:provider/callback'  => 'sessions#create'
   match '/auth/failure'             => 'sessions#failure'
