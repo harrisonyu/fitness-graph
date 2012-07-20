@@ -6,9 +6,6 @@ Create a new exercise!
   = f.text_field :name
   = f.label :exercise_type
   = f.select :exercise_type, ['Weightlifting', 'Cardio']
-  = f.label :date
-  = f.date_select :date, :end_year => Time.now.year, :start_year => Time.now.year-10, :order => [:month, :day, :year]
-  %br
   = f.submit "Create", :class => "btn"
   
   

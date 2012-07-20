@@ -1,0 +1,14 @@
+Create a new time!
+%br
+%br
+= form_for @cardio, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f|
+  = f.label :time
+  = f.time_select :time, :order => [:hours, :minutes, :seconds]
+  = f.label :date
+  = f.date_select :date, :end_year => Time.now.year, :start_year => Time.now.year-10, :order => [:month, :day, :year]
+  %br
+  = f.submit "Create", :class => "btn"
+  
+  
+%br
+= link_to "Back", show_exercise_path(@id), :class => "btn"

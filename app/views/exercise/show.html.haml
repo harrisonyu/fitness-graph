@@ -2,8 +2,27 @@
 %br
 = @exercise.exercise_type
 
+%br
+%br
+
+- if @exercise.exercise_type == "Weightlifting"
+  = link_to "Create a new weightset", new_weightset_path(@exercise.id), :class => "btn"
+  %br
+  %br
+  - @exercise.weightsets.each do |e|
+    Weight:
+    =e.weight
+    Sets:
+    =e.sets
+    Reps:
+    =e.reps
+    Date:
+    =e.date
+    %br
+  %br
+  
 - if @exercise.exercise_type == "Cardio"
-  "HIHIHI"
+  = link_to "Create a new time", new_cardio_path(@exercise.id), :class => "btn"
 %br
 %br
 

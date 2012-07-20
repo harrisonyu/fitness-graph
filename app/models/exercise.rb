@@ -5,6 +5,7 @@ class Exercise < ActiveRecord::Base
   
   
   has_many :weightsets
+  has_many :cardios
   belongs_to :user
   
   

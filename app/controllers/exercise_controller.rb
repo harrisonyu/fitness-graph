@@ -18,7 +18,7 @@ class ExerciseController < ApplicationController
     @exercise = Exercise.new
     @exercise.name = @form[:name]
     @exercise.exercise_type = @form[:exercise_type]
-    @exercise.date = DateTime.new( @form["date(1i)"].to_i , @form["date(2i)"].to_i , @form["date(3i)"].to_i )
+#    @exercise.date = DateTime.new( @form["date(1i)"].to_i , @form["date(2i)"].to_i , @form["date(3i)"].to_i )
     @exercise.user_id = current_user.id
     if @exercise.save
       flash[:notice] = "#{@exercise.name} has been successfully created!"
