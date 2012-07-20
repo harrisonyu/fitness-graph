@@ -1,0 +1,10 @@
+= @exercise.name
+%br
+= @exercise.exercise_type
+
+- if @exercise.exercise_type == "Cardio"
+  "HIHIHI"
+%br
+%br
+
+= link_to "Back", home_path, :class => "btn"

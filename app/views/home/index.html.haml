@@ -6,4 +6,9 @@
   
 %br
 %br
-= link_to "Create a new exercise!", new_exercise_path
+= link_to "Create a new exercise!", new_exercise_path, :class => "btn"
+%br
+%br
+- @exercises.each do |e|
+  = link_to e.name, show_exercise_path(e.id)
+  %br

@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
   
   def index
-  
+    @exercises = current_user.exercises
   end
   
 end

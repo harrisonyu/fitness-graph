@@ -6,6 +6,7 @@ FitnessGraph::Application.routes.draw do
   
   get   '/home/exercise/new'    =>  'exercise#new',     :as => :new_exercise
   post  '/home/exercise/create' =>  'exercise#create',  :as => :create_exercise
+  get   '/home/exercise/:id'    =>  'exercise#show',    :as => :show_exercise
   
   match '/auth/:provider/callback'  => 'sessions#create'
   match '/auth/failure'             => 'sessions#failure'

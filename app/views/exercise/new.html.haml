@@ -10,3 +10,7 @@ Create a new exercise!
   = f.date_select :date, :end_year => Time.now.year, :start_year => Time.now.year-10, :order => [:month, :day, :year]
   %br
   = f.submit "Create", :class => "btn"
+  
+  
+%br
+= link_to "Back", home_path, :class => "btn"
