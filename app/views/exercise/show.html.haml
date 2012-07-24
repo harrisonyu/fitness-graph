@@ -1,29 +1,52 @@
-= @exercise.name
-%br
-= @exercise.exercise_type
-
-%br
+%h2
+  = @exercise.name
+%h4
+  = @exercise.exercise_type
 %br
 
 - if @exercise.exercise_type == "Weightlifting"
   = link_to "Create a new weightset", new_weightset_path(@exercise.id), :class => "btn"
   %br
   %br
-  - @exercise.weightsets.each do |e|
-    Weight:
-    =e.weight
-    Sets:
-    =e.sets
-    Reps:
-    =e.reps
-    Date:
-    =e.date
-    %br
-  %br
+  %table.table.table-bordered
+    -# table row
+    %thead
+      %tr               
+        -# table head
+        %th Weight:     
+        %th Sets:
+        %th Reps:
+        %th Date:
+    %tbody
+      - @exercise.weightsets.each do |e|
+        %tr
+          -# table data
+          %td 
+            =e.weight
+          %td 
+            =e.sets
+          %td 
+            =e.reps
+          %td 
+            =e.date
   
 - if @exercise.exercise_type == "Cardio"
   = link_to "Create a new time", new_cardio_path(@exercise.id), :class => "btn"
-%br
-%br
+  %br
+  %br
+  
+-#
+  %table.table.table-bordered
+    %thead
+      %tr               
+        %th Date:
+        %th Time:
+    %tbody
+      - @exercise.cardio.each do |e|
+        %tr
+          %td 
+            =e.date
+          %td 
+            =e.time
 
 = link_to "Back", home_path, :class => "btn"
