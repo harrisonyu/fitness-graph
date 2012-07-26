@@ -28,7 +28,7 @@
           %td 
             =e.reps
           %td 
-            =e.date
+            =e.date.to_s(:long)
   
 - if @exercise.exercise_type == "Cardio"
   = link_to "Create a new time", new_cardio_path(@exercise.id), :class => "btn"

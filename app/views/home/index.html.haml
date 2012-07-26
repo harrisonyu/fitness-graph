@@ -6,9 +6,23 @@
   
 %br
 %br
-= link_to "Create a new exercise!", new_exercise_path, :class => "btn"
+= link_to "Create a new exercise!", new_exercise_path, class: "btn"
 %br
 %br
-- @exercises.each do |e|
-  = link_to e.name, show_exercise_path(e.id)
+%table.table.table-bordered
+  %thead
+    %tr               
+      %th Name:
+      %th Exercise Type:
+      %th Delete
+  %tbody
+    - @exercises.each do |e|
+      %tr
+        %td 
+          = link_to e.name, show_exercise_path(e.id), class: "linkify-td"
+        %td 
+          =e.exercise_type
+        %td
+          = link_to "Delete", delete_exercise_path(e.id), class: "btn"
+
   %br

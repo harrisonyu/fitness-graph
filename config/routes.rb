@@ -4,14 +4,15 @@ FitnessGraph::Application.routes.draw do
   
   match '/home'   => 'home#index', :as => :home
   
-  get   '/home/exercise/new'    	=>  'exercise#new',     :as => :new_exercise
-  post  '/home/exercise/create' 	=>  'exercise#create',  :as => :create_exercise
-  get   '/home/exercise/:id'    	=>  'exercise#show',    :as => :show_exercise
+  get   '/home/exercise/new'        	=>  'exercise#new',     :as => :new_exercise
+  post  '/home/exercise/create' 	    =>  'exercise#create',  :as => :create_exercise
+  get   '/home/exercise/:id'    	    =>  'exercise#show',    :as => :show_exercise
+  get   '/home/exercise/delete/:id'   =>  'exercise#delete',  :as => :delete_exercise
   
-  get	'/home/exercise/:id/weightset/new'		=>	'weightset#new',	:as	=> :new_weightset
+  get	  '/home/exercise/:id/weightset/new'		=>	'weightset#new',	:as	=> :new_weightset
   post	'/home/exercise/:id/weightset/create' 	=> 	'weightset#create',	:as => :create_weightset
   
-  get	'/home/exercise/:id/cardio/new'		=>	'cardio#new',		:as	=> :new_cardio
+  get	  '/home/exercise/:id/cardio/new'		=>	'cardio#new',		:as	=> :new_cardio
   post	'/home/exercise/:id/cardio/create' 	=> 	'cardio#create',	:as => :create_cardio
   
   match '/auth/:provider/callback'  => 'sessions#create'

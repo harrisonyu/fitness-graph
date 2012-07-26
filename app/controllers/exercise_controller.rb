@@ -29,4 +29,16 @@ class ExerciseController < ApplicationController
     end
   end
   
+  def delete
+    @id = params[:id]
+    @exercise = Exercise.find_by_id(@id)
+    if !@exercise
+      flash[:warning] = "That exercise does not exist!"
+    else
+      @exercise.destroy
+      flash[:notice] = "#{@exercise.name} no longer exists!"
+    end
+    redirect_to home_path
+  end
+  
 end

@@ -13,7 +13,8 @@
           %h1.nav.pull-left Fitness Graphs
           %nav
             %ul.nav.pull-right
-              %li= link_to "Home", home_path
+              -if signed_in?
+                %li= link_to "Home", home_path
               %li= link_to "Help",    '#'
               - if current_user
                 %li= link_to "Sign out", signout_path

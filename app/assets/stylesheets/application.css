@@ -59,3 +59,9 @@ p {
 .text {
   font-size: 25px;
 }
+
+.linkify-td {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
