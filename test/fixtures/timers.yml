@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hour: 1
+  minute: 1
+  second: 1
+  cardio_id: 1
+
+two:
+  hour: 1
+  minute: 1
+  second: 1
+  cardio_id: 1

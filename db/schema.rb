@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120720080947) do
+ActiveRecord::Schema.define(:version => 20120726034621) do
 
   create_table "cardios", :force => true do |t|
     t.datetime "date"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(:version => 20120720080947) do
     t.datetime "updated_at",    :null => false
     t.integer  "user_id"
     t.string   "exercise_type"
+  end
+
+  create_table "timers", :force => true do |t|
+    t.integer  "hour"
+    t.integer  "minute"
+    t.integer  "second"
+    t.integer  "cardio_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
