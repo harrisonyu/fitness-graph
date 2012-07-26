@@ -15,10 +15,10 @@ class WeightsetController < ApplicationController
     @weightset.exercise_id = @id
     if @weightset.save
       flash[:notice] = "Your weightset has been successfully created!"
-      redirect_to show_exercise_path(@id)
+      redirect_to show_exercise_path(@id) and return
     else
       flash[:warning] = "Invalid weightset, please try again"
-      redirect_to new_exercise_path(@id)
+      redirect_to new_exercise_path(@id) and return
     end
   end
   

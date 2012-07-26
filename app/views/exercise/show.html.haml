@@ -35,18 +35,18 @@
   %br
   %br
   
--#
+
   %table.table.table-bordered
     %thead
       %tr               
         %th Date:
         %th Time:
     %tbody
-      - @exercise.cardio.each do |e|
+      - @exercise.cardios.each do |e|
         %tr
           %td 
             =e.date
           %td 
-            =e.time
+            =e.timer#.pretty_print
 
 = link_to "Back", home_path, :class => "btn"

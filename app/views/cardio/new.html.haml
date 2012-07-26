@@ -1,13 +1,18 @@
 Create a new time!
 %br
 %br
-= form_for @cardio, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f|
-  = f.label :time
-  = f.time_select :time, :order => [:hours, :minutes, :seconds]
-  = f.label :date
-  = f.date_select :date, :end_year => Time.now.year, :start_year => Time.now.year-10, :order => [:month, :day, :year]
+= form_tag create_cardio_path, :method=>'post' do
+  = label_tag :time
+  Hour:
+  = text_field_tag "Hours"
+  Minutes:
+  = text_field_tag "Minutes"
+  Seconds:
+  = text_field_tag "Seconds"
+  = label_tag :date
+  = date_select "dates", :date, :end_year => Time.now.year, :start_year => Time.now.year - 10, :order => [:month, :day, :year]
   %br
-  = f.submit "Create", :class => "btn"
+  = submit_tag "Create", :class => "btn"
   
   
 %br
