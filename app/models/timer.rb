@@ -7,8 +7,6 @@ class Timer < ActiveRecord::Base
   validates :second, :numericality => { :only_integer => true, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 60 }
   
   def pretty_print
-    @str = "#{self.hour} #{self.minute} #{self.second}"
+    @str = "#{self.hour} Hours #{self.minute} Minutes #{self.second} Seconds"
   end
-  
-  
 end

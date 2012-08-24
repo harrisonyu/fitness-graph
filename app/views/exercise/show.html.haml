@@ -17,6 +17,7 @@
         %th Sets:
         %th Reps:
         %th Date:
+        %th Delete:
     %tbody
       - @exercise.weightsets.each do |e|
         %tr
@@ -29,6 +30,8 @@
             =e.reps
           %td 
             =e.date.to_s(:long)
+          %td
+            = link_to "Delete", delete_weightset_path(e.id), class: "btn"
   
 - if @exercise.exercise_type == "Cardio"
   = link_to "Create a new time", new_cardio_path(@exercise.id), :class => "btn"
@@ -41,12 +44,15 @@
       %tr               
         %th Date:
         %th Time:
+        %th Delete:
     %tbody
       - @exercise.cardios.each do |e|
         %tr
           %td 
-            =e.date
+            =e.date.to_s(:long)
           %td 
-            =e.timer#.pretty_print
+            =e.timer.pretty_print
+          %td
+            =link_to "Delete", delete_cardio_path(e.id), class: "btn"
 
 = link_to "Back", home_path, :class => "btn"
