@@ -4,10 +4,10 @@ Create a new weightset!
 = form_for @weightset, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f|
   = f.label :weight
   = f.text_field :weight
-  = f.label :sets
-  = f.text_field :sets
   = f.label :reps
   = f.text_field :reps
+  = f.label :sets
+  = f.text_field :sets
   = f.label :date
   = f.date_select :date, :end_year => Time.now.year, :start_year => Time.now.year-10, :order => [:month, :day, :year]
   %br
